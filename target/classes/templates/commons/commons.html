@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"  xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+<head>
+    <meta charset="UTF-8">
+    <title>教务管理</title>
+</head>
+<body>
+<nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow" th:fragment="topbar">
+    <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="#">[[${session.loginUser}]]</a>
+    <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse" data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
+    <ul class="navbar-nav px-3">
+        <li class="nav-item text-nowrap">
+            <a class="nav-link" th:href="@{/user/logout}" th:text="'['+${session.user.username}+']'+ 注销">注销</a>
+        </li>
+    </ul>
+</nav>
+
+<nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse" th:fragment="sidebar">
+    <div class="sidebar-sticky pt-3">
+        <ul class="nav flex-column">
+            <li class="nav-item">
+                <a th:class="${active=='main.html'?'nav-link active':'nav-link'}" th:href="@{/dashboard.html}">
+                    <span data-feather="home"></span>
+                    首页 <span class="sr-only">(current)</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a th:class="${active=='stulist.html'?'nav-link active':'nav-link'}" th:href="@{/stus}">
+                    <span data-feather="file"></span>
+                    学生管理
+                </a>
+            </li>
+            <li class="nav-item">
+                <a th:class="${active=='teaclist.html'?'nav-link active':'nav-link'}" th:href="@{/teacs}">
+                    <span data-feather="shopping-cart"></span>
+                    教师管理
+                </a>
+            </li>
+            <li class="nav-item">
+                <a th:class="${active=='clalist.html'?'nav-link active':'nav-link'}" th:href="@{/clas}">
+                    <span data-feather="shopping-cart"></span>
+                    班级管理
+                </a>
+            </li>
+            <li class="nav-item">
+                <a th:class="${active=='emplist.html'?'nav-link active':'nav-link'}" th:href="@{/emps}">
+                    <span data-feather="users"></span>
+                    员工管理
+                </a>
+            </li>
+<!--            添加下面限制权限  shiro:hasPermission="admin"-->
+            <li class="nav-item" >
+                <a th:class="${active=='usermanagement.html'?'nav-link active':'nav-link'}" th:href="@{/users/usermanagement}">
+                    <span data-feather="bar-chart-2"></span>
+                    用户管理
+                </a>
+            </li>
+            <li class="nav-item" >
+                <a th:class="${active=='personalcenter.html'?'nav-link active':'nav-link'}" th:href="@{/users/personalcenter}">
+                    <span data-feather="layers"></span>
+                    个人中心
+                </a>
+            </li>
+        </ul>
+
+        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+            <span>Saved reports</span>
+            <a class="d-flex align-items-center text-muted" href="#" aria-label="Add a new report">
+                <span data-feather="plus-circle"></span>
+            </a>
+        </h6>
+        <ul class="nav flex-column mb-2">
+            <li class="nav-item">
+                <a th:class="${active=='courlist.html'?'nav-link active':'nav-link'}" th:href="@{/cours}">
+                    <span data-feather="file-text"></span>
+                    课程管理
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <span data-feather="file-text"></span>
+                    选课结果
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <span data-feather="file-text"></span>
+                    增添页面
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <span data-feather="file-text"></span>
+                    Year-end sale
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+</body>
+</html>

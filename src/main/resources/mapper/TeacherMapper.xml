@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.qimozuoye.mapper.TeacherMapper">
+
+    <resultMap id="TeacherMap" type="Teacher">
+        <id property="id" column="id"/>
+        <result property="lastName" column="lastname"/>
+        <result property="identity" column="identity"/>
+        <result property="gender" column="gender"/>
+        <result property="entrance" column="entrance"/>
+        <result property="sclass" column="sclassid"/>
+        <result property="phone" column="phone"/>
+        <result property="education" column="education"/>
+        <result property="position" column="position"/>
+        <association property="sSclass"  javaType="Sclass">
+            <id property="sclassid" column="sclassid"/>
+            <result property="sclassName" column="sclassName"/>
+        </association>
+    </resultMap>
+
+    <select id="getTeachers" resultMap="TeacherMap">
+        <!--      SELECT e.`id`,e.`lastname`,e.`email`,CASE WHEN e.gender='男' THEN 1 ELSE 0 END gender ,d.`departmentname`,e.`birth`,d.`departmentid`
+        FROM employee e,departments d
+        WHERE e.`departmentid`=d.`departmentid`;
+        SELECT e.`id`,e.`lastname`,e.`email`,e.gender ,d.`departmentname`,e.`birth`,d.`departmentid`
+        FROM employee e,departments d
+        WHERE e.`departmentid`=d.`departmentid`;-->
+        SELECT e.`id`,e.`lastname`,e.`identity`,e.`gender`,d.`sclassname`,e.`entrance`,e.`phone`,e.`education`,e.`position`, d.`sclassid`
+        FROM teacher e
+        INNER JOIN sclasses d
+        ON e.`sclassid`=d.`sclassid`
+
+    </select>
+
+    <select id="getByName" resultMap="TeacherMap" parameterType="String">
+        SELECT e.`id`,e.`lastname`,e.`identity`,e.`gender`,d.`sclassname`,e.`entrance`,e.`phone`,e.`education`,e.`position`,d.`sclassid`
+        FROM teacher e
+                 INNER JOIN sclasses d
+                            ON e.`sclassid`=d.`sclassid` and e.`lastname`= #{name}
+    </select>
+
+    <insert id="save" parameterType="com.qimozuoye.pojo.Teacher">
+        insert into teacher (lastname,identity,gender,sclassid,entrance,phone,education,position)
+        values (#{lastName},#{identity},#{gender},#{sclass},#{entrance},#{phone},#{education},#{position});
+    </insert>
+
+    <select id="get" resultMap="TeacherMap" parameterType="int">
+        <!--  select e.`id`,e.`lastname`,e.`email`,e.`gender`,d.`departmentname`,e.`birth`
+          from employee e,departments d
+           where id = #{id} ;-->
+        SELECT e.`id`,e.`lastname`,e.`identity`,e.`gender`,d.`sclassname`,e.`entrance`,e.`phone`,e.`education`,e.`position`,d.`sclassid`
+        FROM teacher e
+        INNER JOIN sclasses d
+        ON e.`sclassid`=d.`sclassid` and e.id=#{id}
+
+
+    </select>
+
+    <delete id="delete" parameterType="int">
+        delete from teacher where id = #{id}
+    </delete>
+
+    <update id="update" parameterType="com.qimozuoye.pojo.Teacher">
+        UPDATE teacher e SET e.`lastname`=#{lastName},e.`identity`=#{identity},e.`gender`=#{gender},e.`sclassid`=#{sclass},e.`entrance`=#{entrance},e.`phone`=#{phone},e.`education`=#{education},e.`position`=#{position}
+        WHERE e.`id`=#{id};
+    </update>
+
+    <select id="getTeacherAndSclass" resultType="com.qimozuoye.vo.TeacherInfo">
+        select teacher.*,sclasses.sclassname from teacher,sclasses where teacher.sclassid = sclasses.sclassid
+    </select>
+</mapper>

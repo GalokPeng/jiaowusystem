@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.qimozuoye.mapper.EmployeeMapper">
+
+    <resultMap id="EmployeeMap" type="Employee">
+    <id property="id" column="id"/>
+    <result property="lastName" column="lastname"/>
+    <result property="email" column="email"/>
+    <result property="gender" column="gender"/>
+    <result property="birth" column="birth"/>
+    <result property="department" column="departmentid"/>
+    <association property="eDepartment"  javaType="Department">
+        <id property="departmentid" column="departmentid"/>
+        <result property="departmentName" column="departmentName"/>
+    </association>
+</resultMap>
+
+    <select id="getEmployees" resultMap="EmployeeMap">
+        <!--      SELECT e.`id`,e.`lastname`,e.`email`,CASE WHEN e.gender='男' THEN 1 ELSE 0 END gender ,d.`departmentname`,e.`birth`,d.`departmentid`
+        FROM employee e,departments d
+        WHERE e.`departmentid`=d.`departmentid`;
+        SELECT e.`id`,e.`lastname`,e.`email`,e.gender ,d.`departmentname`,e.`birth`,d.`departmentid`
+        FROM employee e,departments d
+        WHERE e.`departmentid`=d.`departmentid`;-->
+        SELECT e.`id`,e.`lastname`,e.`email`,e.`gender`,d.`departmentname`,e.`birth`,d.`departmentid`
+        FROM employee e
+        INNER JOIN departments d
+        ON e.`departmentid`=d.`departmentid`
+
+    </select>
+
+    <select id="getByName" resultMap="EmployeeMap" parameterType="String">
+        SELECT e.`id`,e.`lastname`,e.`email`,e.`gender`,d.`departmentname`,e.`birth`,d.`departmentid`
+        FROM employee e
+        INNER JOIN departments d
+        ON e.`departmentid`=d.`departmentid` and e.`lastname`= #{name}
+    </select>
+
+    <insert id="save" parameterType="com.qimozuoye.pojo.Employee">
+        insert into employee (lastname,email,gender,departmentid,birth)
+        values (#{lastName},#{email},#{gender},#{department},#{birth});
+    </insert>
+
+    <select id="get" resultMap="EmployeeMap" parameterType="int">
+      <!--  select e.`id`,e.`lastname`,e.`email`,e.`gender`,d.`departmentname`,e.`birth`
+        from employee e,departments d
+         where id = #{id} ;-->
+        SELECT e.`id`,e.`lastname`,e.`email`,e.`gender`,d.`departmentname`,e.`birth`,d.`departmentid`
+        FROM employee e
+        INNER JOIN departments d
+        ON e.`departmentid`=d.`departmentid` and e.id=#{id}
+
+
+    </select>
+
+    <delete id="delete" parameterType="int">
+        delete from employee where id = #{id}
+    </delete>
+
+    <update id="update" parameterType="com.qimozuoye.pojo.Employee">
+        UPDATE employee e SET e.`lastname`=#{lastName},e.`email`=#{email},e.`gender`=#{gender},e.`departmentid`=#{department},e.`birth`=#{birth}
+        WHERE e.`id`=#{id};
+    </update>
+</mapper>

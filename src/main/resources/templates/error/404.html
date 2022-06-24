@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>404</title>
+    <!-- Bootstrap core CSS -->
+    <link th:href="@{/assets/dist/css/bootstrap.min.css}" rel="stylesheet">
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+    <!-- Custom styles for this template -->
+    <link th:href="@{/css/dashboard.css}" rel="stylesheet">
+</head>
+<body>
+<!--<div th:replace="~{commons/commons::topbar}"></div>-->
+<div th:replace="~{commons/commons::sidebar(active='main.html')}"></div>
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+
+
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2">404</h1>
+        <div class="btn-toolbar mb-2 mb-md-0">
+            <div class="btn-group mr-2">
+                <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
+                <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
+            </div>
+            <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
+                <span data-feather="calendar"></span>
+                This week
+            </button>
+        </div>
+    </div>
+    <!--
+       <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
+       -->
+    <h2>404</h2>
+
+</main>
+<script th:src="@{https://code.jquery.com/jquery-3.5.1.slim.min.js}" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script>window.jQuery || document.write('<script th:src="@{/assets/js/vendor/jquery.slim.min.js}"><\/script>')</script><script th:src="@{/assets/dist/js/bootstrap.bundle.min.js}"></script>
+<script th:src="@{https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js}"></script>
+<script th:src="@{https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js}"></script>
+<script th:src="@{/js/dashboard.js}"></script>
+</body>
+</html>

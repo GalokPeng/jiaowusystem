@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v4.1.1">
+    <title>Dashboard Template · Bootstrap</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/dashboard/">
+
+    <!-- Bootstrap core CSS -->
+    <link th:href="@{/assets/dist/css/bootstrap.min.css}" rel="stylesheet">
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+    <!-- Custom styles for this template -->
+    <link th:href="@{/css/dashboard.css}" rel="stylesheet">
+</head>
+<body>
+<div th:replace="~{commons/commons::topbar}"></div>
+<div th:replace="~{commons/commons::sidebar(active='stulist.html')}"></div>
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+
+
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2">学生管理</h1>
+        <div class="btn-toolbar mb-2 mb-md-0">
+            <div class="btn-group mr-2">
+                <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
+                <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
+            </div>
+            <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
+                <span data-feather="calendar"></span>
+                This week
+            </button>
+        </div>
+    </div>
+ <!--
+    <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
+    -->
+    <h2>
+        <a class="btn btn-sm btn-success" th:href="@{/stu}" >添加学生</a>
+        <form th:action="@{/selestu}" method="post">
+            <input type="number" class="btn btn-sm btn-success" name="id" value="0">
+            <button type="submit" class="btn btn-sm btn-success">搜寻</button>
+        </form>
+    </h2>
+    <div class="table-responsive">
+        <table class="table table-striped table-sm">
+            <thead>
+            <tr>
+                <th>学号</th>
+                <th>姓名</th>
+                <th>身份证号码</th>
+                <th>性别</th>
+                <th>班级</th>
+                <th>入学年月</th>
+                <th>是否毕业</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="stu:${page.records}">
+                <td th:text="${stu.getId()}"></td>
+                <!--stu.getLastName() == 'daxi'?stu.getLastName():'无'   查询-->
+                <td th:text="${stu.getLastName()}"></td>
+                <td th:text="${session.user.perms == 'admin'?stu.getIdentity():'权限不足'}"></td>
+                <td th:text="${stu.getGender()==0?'女':'男'}"></td>
+                <td th:text="${stu.getSclassName()}"></td>
+                <td th:text="${#dates.format(stu.getEntrance(),'yyyy-MM-dd')}"></td>
+                <td th:text="${stu.getGraduated()==0?'否':'是'}"></td>
+                <td>
+                    <a class="btn btn-sm btn-primary" th:href="@{/stu/{id}(id=${stu.getId()}) }">编辑</a>
+                    <a class="btn btn-sm btn-danger" th:href="@{/delstu/{id}(id=${stu.getId()}) }">删除</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <center>
+            <p><h5>总人数: [[${page.getTotal()}]] 人</h5></p>
+            <a th:href="@{/stus(pg=${page.current}-1)}" class="layui-laypage-pre">上一页</a>
+            <a th:href="@{/stus(pg=${num})}" th:class="${num==page.current?'active':''}" th:each="num:${#numbers.sequence(1,page.pages)}">[[${num}]]</a>
+            <a th:href="@{/stus(pg=${page.current}+1)}" class="layui-laypage-next">下一页</a>
+        </center>
+    </div>
+</main>
+<script th:src="@{https://code.jquery.com/jquery-3.5.1.slim.min.js}" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script>window.jQuery || document.write('<script th:src="@{/assets/js/vendor/jquery.slim.min.js}"><\/script>')</script><script th:src="@{/assets/dist/js/bootstrap.bundle.min.js}"></script>
+<script th:src="@{https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js}"></script>
+<script th:src="@{https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js}"></script>
+<script th:src="@{/js/dashboard.js}"></script>
+</body>
+</html>

@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="8195995d-6bdc-4cf1-a87c-c7cb1619e085" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="books@localhost" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="books@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="books@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="books: schema" type="76f4a085:MysqlImplModel$Schema" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ExecutionTargetDialog">
+    <checked>
+      <node key="c5adab01-343e-44a8-9674-a4f78280d9ce" />
+    </checked>
+    <expanded>
+      <node key="c5adab01-343e-44a8-9674-a4f78280d9ce" />
+    </expanded>
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="qimozuoye" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="FxmlFile" />
+        <option value="HTML File" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="E:\java\apache-maven-3.5.2-bin\apache-maven-3.5.2\maven-repository" />
+        <option name="mavenHome" value="E:/java/apache-maven-3.5.2-bin/apache-maven-3.5.2" />
+        <option name="userSettingsFile" value="E:\java\apache-maven-3.5.2-bin\apache-maven-3.5.2\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+        <option name="jdkForImporter" value="1.8" />
+        <option name="vmOptionsForImporter" value="-Xmx768m" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="220q5qctaqtyallexER7m8EJSoE" />
+  <component name="ProjectViewState">
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="jdk.selected.JAVA_MODULE" value="1.8" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.4085155" />
+    <property name="settings.editor.selected.configurable" value="editing.templates" />
+  </component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\学习\WEB期末大作业\19数据科学与大数据技术2班 彭佳洛 201902150586 Springboot实训报告\springboot qimozuoye\src\main\resources\static\js" />
+      <recent name="E:\学习\WEB期末大作业\19数据科学与大数据技术2班 彭佳洛 201902150586 Springboot实训报告\springboot qimozuoye\src\main\resources\templates\cour" />
+      <recent name="E:\学习\WEB期末大作业\19数据科学与大数据技术2班 彭佳洛 201902150586 Springboot实训报告\springboot qimozuoye\src\main\resources\templates\cla" />
+      <recent name="E:\学习\WEB期末大作业\19数据科学与大数据技术2班 彭佳洛 201902150586 Springboot实训报告\springboot qimozuoye\src\main\resources\templates\teac" />
+      <recent name="E:\学习\WEB期末大作业\19数据科学与大数据技术2班 彭佳洛 201902150586 Springboot实训报告\springboot demo01\src\main\resources\templates\stu" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\学习\WEB期末大作业\19数据科学与大数据技术2班 彭佳洛 201902150586 Springboot实训报告\springboot qimozuoye\src\main\resources\templates\personal" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="QimozuoyeApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="qimozuoye" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.qimozuoye.QimozuoyeApplication" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="UPDATE_ACTION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8195995d-6bdc-4cf1-a87c-c7cb1619e085" name="Default Changelist" comment="" />
+      <created>1638984671114</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1638984671114</updated>
+      <workItem from="1638984680493" duration="2535000" />
+      <workItem from="1638987826527" duration="80000" />
+      <workItem from="1639025804117" duration="2509000" />
+      <workItem from="1639028388905" duration="167000" />
+      <workItem from="1639028907678" duration="417000" />
+      <workItem from="1639029357194" duration="7466000" />
+      <workItem from="1639043967398" duration="397000" />
+      <workItem from="1639044935493" duration="3394000" />
+      <workItem from="1640580892103" duration="5866000" />
+      <workItem from="1640586842140" duration="29000" />
+      <workItem from="1640586893574" duration="8462000" />
+      <workItem from="1640595816299" duration="4928000" />
+      <workItem from="1640623054557" duration="1906000" />
+      <workItem from="1640668978420" duration="18576000" />
+      <workItem from="1640753401955" duration="595000" />
+      <workItem from="1640754818074" duration="569000" />
+      <workItem from="1640755736241" duration="23725000" />
+      <workItem from="1640822660405" duration="25193000" />
+      <workItem from="1640922576118" duration="9250000" />
+      <workItem from="1641023323088" duration="31799000" />
+      <workItem from="1641095308095" duration="19763000" />
+      <workItem from="1641116844713" duration="3911000" />
+      <workItem from="1641140386504" duration="2218000" />
+      <workItem from="1641170591839" duration="3998000" />
+      <workItem from="1655197574971" duration="1959000" />
+      <workItem from="1655434940487" duration="1608000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1493" height="126" key="GridCell.Tab.0.bottom" timestamp="1655436574442">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="126" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1655436574442" />
+    <state width="1493" height="126" key="GridCell.Tab.0.center" timestamp="1655436574442">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="126" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1655436574442" />
+    <state width="1493" height="126" key="GridCell.Tab.0.left" timestamp="1655436574442">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="126" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1655436574442" />
+    <state width="1493" height="126" key="GridCell.Tab.0.right" timestamp="1655436574442">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="126" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1655436574442" />
+    <state width="1493" height="126" key="GridCell.Tab.1.bottom" timestamp="1655436574442">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="126" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1655436574442" />
+    <state width="1493" height="126" key="GridCell.Tab.1.center" timestamp="1655436574442">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="126" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1655436574442" />
+    <state width="1493" height="126" key="GridCell.Tab.1.left" timestamp="1655436574442">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="126" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1655436574442" />
+    <state width="1493" height="126" key="GridCell.Tab.1.right" timestamp="1655436574442">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="126" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1655436574442" />
+  </component>
+</project>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qimozuoye.mapper.UserMapper">
+    <resultMap id="GuestuserMap" type="com.qimozuoye.pojo.GuestUser">
+        <id property="id" column="id"/>
+        <result property="username" column="username"/>
+        <result property="password" column="password"/>
+        <result property="perms" column="perms"/>
+    </resultMap>
+
+    <select id="findAll" resultMap="GuestuserMap">
+        select * from u_user;
+    </select>
+
+    <select id="findByName" parameterType="String" resultType="com.qimozuoye.pojo.GuestUser">
+    SELECT * FROM u_user WHERE username=#{username};
+    </select>
+    <select id="findById" resultType="com.qimozuoye.pojo.GuestUser" parameterType="int">
+        select * from u_user where id=#{id};
+    </select>
+    <insert id="save" parameterType="com.qimozuoye.pojo.GuestUser" >
+        INSERT INTO u_user(username,password) VALUES(#{username},#{password});
+    </insert>
+    <insert id="adminAdd" parameterType="com.qimozuoye.pojo.GuestUser">
+        INSERT INTO u_user(username,password,perms) VALUES(#{username},#{password},#{perms});
+    </insert>
+
+    <update id="update" parameterType="com.qimozuoye.pojo.GuestUser">
+        update u_user set username=#{username},password=#{password},perms=#{perms}
+        where id=#{id};
+    </update>
+    <delete id="delete" parameterType="int">
+        delete from u_user where id=#{id}
+    </delete>
+</mapper>
